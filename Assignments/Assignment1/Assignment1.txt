@@ -1,0 +1,207 @@
+Problem 1:
+
+a) Navigate and List: 
+a. Start by navigating to your home directory and list its contents. Then, move into a 
+directory named "LinuxAssignment" if it exists; otherwise, create it.
+Ans;
+root@LAPTOP-HL9IAD46:~# cd LinuxAssignment
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#
+=============================================================================================
+b) File Management: 
+a. Inside the "LinuxAssignment" directory, create a new file named "file1.txt". Display its 
+contents. 
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# cat file1.txt
+This to my file yash rathod
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#
+===========================================================================================
+c) Directory Management: 
+a. Create a new directory named "docs" inside the "LinuxAssignment" directory. 
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# ls
+ docs   file1.txt  "file1.txt'"
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#
+==========================================================================================
+d) Copy and Move Files: 
+a. Copy the "file1.txt" file into the "docs" directory and rename it to "file2.txt".
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# ls docs
+file2.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#
+==========================================================================================
+e) Permissions and Ownership: 
+a. Change the permissions of "file2.txt" to allow read, write, and execute permissions for 
+the owner and only read permissions for others. Then, change the owner of "file2.txt" to 
+the current user. 
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# chmod 744 docs/file2.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# sudo chown $(whoami):$(whoami) docs/file2.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# ls -l docs/file2.txt
+-rwxr--r-- 1 root root 28 Feb 26 23:51 docs/file2.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#
+================================================================================================
+f) Final Checklist: 
+a. Finally, list the contents of the "LinuxAssignment" directory and the root directory to 
+ensure that all operations were performed correctly.
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# ls ~/LinuxAssignment
+ docs   file1.txt  "file1.txt'"
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# ls
+ docs   file1.txt  "file1.txt'"
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#
+=====================================================================================================
+g) File Searching: 
+a. Search for all files with the extension ".txt" in the current directory and its subdirectories. 
+b. Display lines containing a specific word in a file (provide a file name and the specific 
+word to search).
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# find . -type f -name "*.txt"
+./docs/file2.txt
+./file1.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# grep "specific_word" filename.txt
+grep: filename.txt: No such file or directory
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# ^C
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# grep "hello" file1.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#
+==================================================================================================
+h) System Information: 
+a. Display the current system date and time.
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# date
+Thu Feb 27 18:53:49 IST 2025
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#
+============================================================================================================
+i) Networking: 
+a. Display the IP address of the system. 
+b. Ping a remote server to check connectivity (provide a remote server address to ping). 
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1492 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:88:ea:fd brd ff:ff:ff:ff:ff:ff
+    inet 172.22.138.202/20 brd 172.22.143.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe88:eafd/64 scope link
+       valid_lft forever preferred_lft forever
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=118 time=31.2 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=118 time=67.0 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=118 time=186 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=118 time=41.4 ms
+===================================================================================================
+k) File Editing: 
+a. Open the "file1.txt" file in a text editor and add some text to it. 
+b. Replace a specific word in the "file1.txt" file with another word (provide the original 
+word and the word to replace it with). 
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# nano file1.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# sed -i 's/oldword/newword/g' file1.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# cat file1.txt
+This to my file yash rathod
+welcome to cdac
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#
+====================================================================================================
+
+Problem 2:
+
+a. Suppose you have a file named "data.txt" containing important information. Display the 
+first 10 lines of this file to quickly glance at its contents using a command. 
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# head -n 10 data.txt
+yash
+raj
+karan
+vaibhav
+shivam
+sonu
+monu
+aditya
+ajinkya
+tejas
+=====================================================================================================
+b. Now, to check the end of the file for any recent additions, display the last 5 lines of 
+"data.txt" using another command.
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# tail -n 5 data.txt
+sonu
+monu
+aditya
+ajinkya
+tejas
+=====================================================================================================
+c. In a file named "numbers.txt," there are a series of numbers. Display the first 15 lines of 
+this file to analyze the initial data set.
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# touch numbers.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# nano numbers.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#  head -n 15 numbers.txt
+12
+23
+43
+21
+67
+86
+54
+98
+43
+21
+32
+43
+21
+67
+78
+====================================================================================================
+d. To focus on the last few numbers of the dataset, display the last 3 lines of "numbers.txt".
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment#  tail -n 3 numbers.txt
+98
+87
+65
+====================================================================================================
+e. Imagine you have a file named "input.txt" with text content. Use a command to translate 
+all lowercase letters to uppercase in "input.txt" and save the modified text in a new file 
+named "output.txt."
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# touch input.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# nano input.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# tr 'a-z' 'A-Z' < input.txt > output.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# cat output.txt
+HI EVERY ONE WELCOME TO MY PERSONAL FILES YASH.TXT
+==================================================================================================
+f. In a file named "duplicate.txt," there are several lines of text, some of which are 
+duplicates. Use a command to display only the unique lines from "duplicate.txt." 
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# touch duplicate.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# nano duplicate.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# uniq duplicate.txt
+input are from user and display to output
+=======================================================================================================
+g. In a file named "fruit.txt," there is a list of fruits, but some fruits are repeated. Use a 
+command to display each unique fruit along with the count of its occurrences in 
+"fruit.txt." 
+Ans:
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# touch fruit.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# nano fruit.txt
+root@LAPTOP-HL9IAD46:~/LinuxAssignment# sort fruit.txt | uniq -c
+      2 apple
+      1 apple
+      1 banana
+      1 mango
+      1 orange
+========================================================================================================
+
+
+
+
+
+
+
