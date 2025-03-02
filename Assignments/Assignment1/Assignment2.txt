@@ -1,0 +1,259 @@
+Part A
+What will the following commands do? 
+
+ echo "Hello, World!"
+Ans: used for printing output
+ name="Productive"
+Ans: assign comand
+ touch file.txt
+Ans: used to create a file 
+ ls -a
+Ans: list all files and directories
+ rm file.txt
+Ans: used for remove a file
+ cp file1.txt file2.txt
+Ans:copy the contents of file1.txt to a new file file2.txt.
+ mv file.txt /path/to/directory/
+Ans:used to move the file file.txt to a new location, which is specified by /path/to/directory/
+ chmod 755 script.sh
+Ans: used for changing permission 
+ grep "pattern" file.txt
+Ans:used to search for a specific pattern
+ kill PID
+Ans: used to terminate a process with a specific Process ID (PID).
+ mkdir mydir && cd mydir && touch file.txt && echo "Hello, World!" > file.txt && cat file.txt 
+Ans:
+ ls -l | grep ".txt"
+Ans:used to list the files and directories in the current directory and then filter those that have a .txt extension.
+ cat file1.txt file2.txt | sort | uniq
+Ans: used to combine the contents of two files, sort the lines, and then remove duplicate lines.
+ ls -l | grep "^d"
+Ans:used to list directories in the current working directory.
+ grep -r "pattern" /path/to/directory/
+Ans:used to search for a specific pattern.
+ cat file1.txt file2.txt | sort | uniq –d
+Ans:used to find duplicate lines across two files after combining and sorting them.
+ chmod 644 file.txt
+Ans:used to change the file permissions of file.txt.
+ cp -r source_directory destination_directory
+Ans:used to copy an entire directory from one location to another.
+ find /path/to/search -name "*.txt"
+Ans:used to search for all files with the .txt extension within a specified directory and its subdirectories.
+ chmod u+x file.txt
+Ans:used to add execute permission for the user (owner) of the file file.txt.
+ echo $PATH 
+Ans:used to display the current value of the PATH environment variable.
+=====================================================================================================================
+Part B
+Identify True or False:
+
+1. ls is used to list files and directories in a directory.
+Ans:True
+2. mv is used to move files and directories.
+Ans:True
+3. cd is used to copy files and directories.
+Ans:False
+4. pwd stands for "print working directory" and displays the current directory.
+Ans:True
+5. grep is used to search for patterns in files.
+Ans:True
+6. chmod 755 file.txt gives read, write, and execute permissions to the owner, and read and execute
+permissions to group and others.
+Ans:True
+7. mkdir -p directory1/directory2 creates nested directories, creating directory2 inside directory1
+if directory1 does not exist.
+Ans:True
+8. rm -rf file.txt deletes a file forcefully without confirmation. 
+Ans:True
+===================================================================================================
+Identify the Incorrect Commands:
+
+1. chmodx is used to change file permissions.//incorrect//Should be chmod
+2. cpy is used to copy files and directories.//incorrect//Should be cp
+3. mkfile is used to create a new file.//incorrect//Should be touch
+4. catx is used to concatenate files.//incorrect//Should be cat
+5. rn is used to rename files.//incorrect//Should be mv
+====================================================================================================
+Part C
+
+Question 1: Write a shell script that prints "Hello, World!" to the terminal.
+Ans:root@LAPTOP-HL9IAD46:~# echo "hello world"
+hello world
+
+Question 2: Declare a variable named "name" and assign the value "CDAC Mumbai" to it. Print the
+value of the variable.
+Ans:root@LAPTOP-HL9IAD46:~# name="cdac mumbai"
+root@LAPTOP-HL9IAD46:~# echo $name
+cdac Mumbai
+
+Question 3: Write a shell script that takes a number as input from the user and prints it.
+Ans:root@LAPTOP-HL9IAD46:~# bash takenumber
+enter a first number
+10
+enter a second number
+20
+Question 4: Write a shell script that performs addition of two numbers (e.g., 5 and 3) and prints the
+result.
+Ans:root@LAPTOP-HL9IAD46:~# bash takenumber
+Enter the first number:
+5
+Enter the second number:
+3
+The sum is: 8
+
+Question 5: Write a shell script that takes a number as input and prints "Even" if it is even, otherwise
+prints "Odd".
+Ans:root@LAPTOP-HL9IAD46:~# nano takenumber
+root@LAPTOP-HL9IAD46:~# bash takenumber
+Enter a number:
+5
+Odd
+
+Question 6: Write a shell script that uses a for loop to print numbers from 1 to 5.
+Ans:root@LAPTOP-HL9IAD46:~# nano takenumber
+root@LAPTOP-HL9IAD46:~# bash takenumber
+1
+2
+3
+4
+5
+
+Question 7: Write a shell script that uses a while loop to print numbers from 1 to 5.
+Ans:root@LAPTOP-HL9IAD46:~# nano takenumber
+root@LAPTOP-HL9IAD46:~# bash takenumber
+1
+2
+3
+4
+5
+
+Question 8: Write a shell script that checks if a file named "file.txt" exists in the current directory. If it
+does, print "File exists", otherwise, print "File does not exist".
+Ans:
+root@LAPTOP-HL9IAD46:~# nano ifelse
+root@LAPTOP-HL9IAD46:~# bash ifelse
+File does not exist
+root@LAPTOP-HL9IAD46:~#
+
+Question 9: Write a shell script that uses the if statement to check if a number is greater than 10 and
+prints a message accordingly.
+Ans:
+root@LAPTOP-HL9IAD46:~# nano ifelse
+root@LAPTOP-HL9IAD46:~# bash ifelse
+Enter a number:
+15
+The number is greater than 10.
+
+Question 10: Write a shell script that uses nested for loops to print a multiplication table for numbers
+from 1 to 5. The output should be formatted nicely, with each row representing a number and each
+column representing the multiplication result for that number. 
+Ans:
+root@LAPTOP-HL9IAD46:~# nano ifelse
+root@LAPTOP-HL9IAD46:~# bash ifelse
+ 1  2  3  4  5
+ 2  4  6  8 10
+ 3  6  9 12 15
+ 4  8 12 16 20
+ 5 10 15 20 25
+
+Question 11: Write a shell script that uses a while loop to read numbers from the user until the user enters
+a negative number. For each positive number entered, print its square. Use the break statement to exit the
+loop when a negative number is entered. 
+Ans:
+root@LAPTOP-HL9IAD46:~# nano ifelse
+root@LAPTOP-HL9IAD46:~# bash ifelse
+Enter a number (enter a negative number to stop):
+5
+The square of 5 is 25.
+Enter a number (enter a negative number to stop):
+3
+The square of 3 is 9.
+Enter a number (enter a negative number to stop):
+-1
+Negative number entered, exiting the loop.
+================================================================================================================
+Part E:
+ 
+ 1. Consider the following processes with arrival times and burst times: 
+     | Process | Arrival Time | Burst Time | waiting time|
+     |---------|--------------|------------|-------------|
+     | P1      | 0            | 5          |     0       |
+     | P2      | 1            | 3          |     4       | 
+     | P3      | 2            | 6          |     6       |
+    Calculate the average waiting time using First-Come, First-Served (FCFS) scheduling.
+Ans:                    
+    p1   p2   p3       
+ 0     5    8    14     
+                        
+  average waiting time=10/3
+                   Ans=3.4          
+       
+2. Consider the following processes with arrival times and burst times: 
+     | Process | Arrival Time | Burst Time | waiting time| turn around time
+     |---------|--------------|------------|-------------|---------------|
+     | P1      | 0            | 5          |     0       |      3        |
+     | P2      | 1            | 3          |     8       |      12       |
+     | P3      | 2            | 1          |     2       |      3        |
+     | P4      | 3            | 4          |     0       |      4        |
+   Calculate the average turnaround time using Shortest Job First (SJF) scheduling.
+Ans:
+    p3  p1  p4  p2
+  0    2   5   9   14
+average turn around time=22/4
+                        Ans=5.5
+
+3. Consider the following processes with arrival times, burst times, and priorities (lower number 
+  indicates higher priority): 
+     | Process | Arrival Time | Burst Time | Priority |waiting time|
+     |---------|--------------|------------|----------|------------| 
+     | P1      | 0            | 6          | 3        |     0      |
+     | P2      | 1            | 4          | 1        |     5      |
+     | P3      | 2            | 7          | 4        |     10     |         
+     | P4      | 3            | 2          | 2        |     7      |
+     Calculate the average waiting time using Priority Scheduling.
+Ans:
+   p1  p2  p4  p3
+ 0   6   10  12  19
+  average waiting time=22/4
+                   Ans=5.5
+
+4. Consider the following processes with arrival times and burst times, and the time quantum for 
+Round Robin scheduling is 2 units: 
+     | Process | Arrival Time | Burst Time | waiting time| turn around time|
+     |---------|--------------|------------|-------------|-----------------| 
+     | P1      | 0            |    4       |     6       |        10       |
+     | P2      | 1            |    5       |     8       |        13       |
+     | P3      | 2            |    2       |     2       |        4        | 
+     | P4      | 3            |    3       |     7       |        10       |
+     Calculate the average turnaround time using Round Robin scheduling. 
+Ans:
+      p1   p2   p3   p4   p1   p2   p4   p2
+    0    2    4    6    8   10    12   13   14
+  average turn around time=37/4
+                       Ans=9.25
+
+5. Consider a program that uses the fork() system call to create a child process. Initially, the parent 
+process has a variable x with a value of 5. After forking, both the parent and child processes 
+increment the value of x by 1. 
+      What will be the final values of x in the parent and child processes after the fork() call?
+Ans: After the fork() call, both the parent and the child process will have their own independent copies of x, 
+  and both will have a final value of x = 6.
+
+==========================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
