@@ -1,0 +1,152 @@
+1.Find the Largest and Smallest Element 
+Given an array, find the smallest and largest elements in it.
+
+public class FindLargestSmallest {
+    public static void main(String[] args) {
+        int[] arr = {34, 78, 12, 56, 23, 90, 1, 45};
+        int smallest = arr[0];
+        int largest = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < smallest) {
+                smallest = arr[i];
+            }
+            if (arr[i] > largest) {
+                largest = arr[i];
+            }
+        }    
+        System.out.println("Smallest Element: " + smallest);
+        System.out.println("Largest Element: " + largest);
+    }
+}
+2.Reverse an Array 
+Reverse the given array in place.
+
+public class ReverseArray {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        System.out.println("Original Array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        int left = 0;
+        int right = arr.length - 1;
+        while (left < right) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }      
+        System.out.println("\nReversed Array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+3.Find the Second Largest Element 
+Find the second-largest element in the given array. 
+
+class Largestsecond{
+	public static void main(String[] args){
+		int arr[] = {1,2,8,3,4,5,6,7,0};
+		int temp;
+		for(int i=0;i<arr.length;i++)
+		{
+            for(int j=i+1;j<arr.length;j++)
+			{
+                if(arr[i]<arr[j])
+				{
+                   temp=arr[i];
+                   arr[i]=arr[j];
+                   arr[j]=temp;				   
+		        }
+			}
+        }
+		  System.out.println("secound largest number in array is: " +arr[1]);
+	}
+}
+
+
+4.Count Even and Odd Numbers 
+Count the number of even and odd numbers in an array
+class Evenodd{
+	public static void main(String[] args){
+		int arr[] = {1,2,8,3,4,5,6,7,0};
+		int Evencount=0;
+		int Oddcount=0;
+		for(int i=0;i<arr.length;i++)
+		{
+		if(arr[i]%2==0)
+		{
+			System.out.println("Even arry element: " +arr[i]);
+			 Evencount++;
+		}
+        else{
+			System.out.println("Odd arry element: "  +arr[i]);
+			Oddcount++;
+        }
+		}
+		 System.out.println("Evencount is: " +Evencount);
+		  System.out.println("Oddcount is: " +Oddcount);
+	}
+}	
+5. Find Sum and Average 
+Compute the sum and average of all elements in the array. 
+
+class Sumaverage{
+	public static void main(String[] args){
+		int arr[] = {1,2,8,3,4,5,6,7,0};
+		int sum=0;
+		int Average;
+         for(int i=0;i<arr.length;i++)
+		 {
+		   sum=sum+arr[i];
+		 }
+		   Average=sum/arr.length;
+	System.out.println("Total sum is: " +sum);
+    System.out.println("Average is: " +Average);
+	}
+}   
+
+6. Remove Duplicates from a Sorted Array 
+Remove duplicate elements from a sorted array without using extra space. 
+
+  class EmployeeDemo5{
+		int i;
+		String name;
+		
+		EmployeeDemo5(){
+			this.i = 100;
+			this.name="unknown";
+			System.out.println("Default");
+		}
+		
+		EmployeeDemo5(int i,String name){
+			this.i = i;
+			this.name=name;
+			System.out.println("Parameterized");
+		}
+		
+		void data(String name,int i)
+		{
+			this.i = i;
+			this.name=name;
+			
+		}
+		static void data1(String name,int i)
+		{
+			i = i;
+			name=name;
+			
+		}
+		public static void main(String args[]){
+			
+			EmployeeDemo5 e = new EmployeeDemo5();
+			e.data("dffd1",1232);
+			EmployeeDemo5 e1 = new EmployeeDemo5("sdsf",7232);
+			data1("dffd",232);
+			
+		}
+		
+  }
+  
